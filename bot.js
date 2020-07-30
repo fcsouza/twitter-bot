@@ -1,7 +1,8 @@
+require('dotenv').config()
 const config = require('./config')
 const twit =  require('twit')
 
-const T = new twit(config)
+const T = new twit(config);
 
 function onlyUnique(value, index, self) { 
     return self.indexOf(value) === index;
@@ -12,7 +13,7 @@ function retweet(searchText) {
     let params = {
         q : searchText + '',
         result_type : 'mixed',
-        count : 25,
+        count : 100,
     }
 
     T.get('search/tweets', params, function(err_search, data_search, response_search){
@@ -56,8 +57,8 @@ function retweet(searchText) {
                     }
 
                     // debugging
-                    // console.log("Data = " + data_rt.text)
-                    // console.log(data_rt)
+                    //console.log("Data = " + data_rt.text)
+                    //console.log(data_rt)
                 })
             }
         }
@@ -69,4 +70,4 @@ function retweet(searchText) {
 }
 
 // Run every 60 seconds
-setInterval(function() { retweet('#DataScience OR #DataVisualization'); }, 60000)
+setInterval(function() { retweet('#DataScience OR #DataVisualization OR #Programming OR #Node OR #developer OR #coding OR #javascript OR #developers OR #technology'); }, 60000)
