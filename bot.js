@@ -69,5 +69,6 @@ function retweet(searchText) {
     })
 }
 
-// Run every 60 seconds
-setInterval(function() { retweet('#DataScience OR #DataVisualization OR #Programming OR #Node OR #developer OR #coding OR #javascript OR #developers OR #technology'); }, 60000)
+// Run every 20 minutes
+const TIME = 1200000
+setInterval(function() { retweet('#DataScience OR #DataVisualization OR #Programming OR #Node OR #developer OR #coding OR #javascript OR #developers OR #technology'); }, TIME)
