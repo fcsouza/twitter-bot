@@ -70,5 +70,6 @@ function retweet(searchText) {
 }
 
 // Run every 20 minutes
+// Hashtags para pesquisar 
 const TIME = 1200000
 setInterval(function() { retweet('#DataScience OR #DataVisualization OR #Programming OR #Node OR #developer OR #coding OR #javascript OR #developers OR #technology'); }, TIME)
